@@ -1,11 +1,13 @@
 import React from 'react'
-import Example from './Navbar';
+import data from "./Json";
 
 function Dashboard() {
+    console.log(data)
     
   return (
+
     <>
-    <Example/>
+   
     
         
           <div className="flex flex-col">
@@ -19,13 +21,13 @@ function Dashboard() {
                           scope="col"
                           className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
                         >
-                          ID
+                          COUNT
                         </th>
                         <th
                           scope="col"
                           className="px-6 py-3 text-xs font-bold text-left text-gray-500 uppercase "
                         >
-                          Name
+                          NAME
                         </th>
                         <th
                           scope="col"
@@ -37,95 +39,56 @@ function Dashboard() {
                           scope="col"
                           className="px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
                         >
-                          Edit
+                          Role
                         </th>
                         <th
                           scope="col"
                           className="px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
                         >
-                          Delete
+                          Country
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-6 py-3 text-xs font-bold text-right text-gray-500 uppercase "
+                        >
+                          Resume
                         </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200">
-                      <tr>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
-                          1
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">Jone Doe</td>
-                        <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                          jonne62@gmail.com
-                        </td>
-                        <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                          <a className="text-green-500 hover:text-green-700" href="#">
-                            Edit
-                          </a>
-                        </td>
-                        <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                          <a className="text-red-500 hover:text-red-700" href="#">
-                            Delete
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
-                          2
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">Jone Doe</td>
-                        <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                          jonne62@gmail.com
-                        </td>
-                        <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                          <a className="text-green-300 hover:text-green-700" href="#">
-                            Edit
-                          </a>
-                        </td>
-                        <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                          <a className="text-red-500 hover:text-red-700" href="#">
-                            Delete
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
-                          3
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">Jone Doe</td>
-                        <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                          jonne62@gmail.com
-                        </td>
-                        <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                          <a className="text-green-500 hover:text-green-700" href="#">
-                            Edit
-                          </a>
-                        </td>
-                        <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                          <a className="text-red-500 hover:text-red-700" href="#">
-                            Delete
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
-                          4
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                          Mary Poppins
-                        </td>
-                        <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
-                          marypoppins@gmail.com
-                        </td>
-                        <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                          <a className="text-green-300 hover:text-green-700" href="#">
-                            Edit
-                          </a>
-                        </td>
-                        <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                          <a className="text-red-500 hover:text-red-700" href="#">
-                            Delete
-                          </a>
-                        </td>
-                      </tr>
+                        {data.length !=0 ? 
+                        data.map((ele,index)=>(
+                            
+                            <tr>
+                              {  console.log(ele.email)}
+                                
+                            <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
+                              {index+1}
+                            </td>
+                            <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">{ele.first_name}</td>
+                            <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
+                              {ele.email}
+                            </td>
+                            <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                              <a className="text-green-500 hover:text-blue-700" href="#">
+                                {ele.profession}
+                              </a>
+                            </td>
+                            <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                              <a className="text-green-500 hover:text-blue-700" href="#">
+                                {ele.country}
+                              </a>
+                            </td>
+                            <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                              <a className="text-orange-500 hover:text-blue-700" href="#">
+                                Generate
+                              </a>
+                            </td>
+                          </tr> 
+                        ))
+                       
+                      : <h1>NO DATA</h1>}
+                     
                     </tbody>
                   </table>
                 </div>
