@@ -2,6 +2,7 @@ import {React,useState} from 'react'
 import jsonData from "./Json"
 import Pagination from './Pagination'
 import Dashboard from './Dashboard'
+import Filter from './Filter';
 
 
 function Middleware() {
@@ -17,6 +18,7 @@ function Middleware() {
    
   return (
     <>
+    <Filter/>
    <Dashboard data={currentPosts} currentPage={currentPage} firstPostIndex={firstPostIndex}/>
    <Pagination  totalPosts={jsonData.length}
                 postsPerPage={postsPerPage}
