@@ -1,8 +1,12 @@
 import React from 'react'
-import data from "./Json";
 
-function Dashboard() {
-    console.log(data)
+
+
+function Dashboard({data,firstPostIndex}) {
+    // console.log(data)
+  
+    
+    
     
   return (
 
@@ -57,13 +61,13 @@ function Dashboard() {
                     </thead>
                     <tbody className="divide-y divide-gray-200">
                         {data.length !=0 ? 
-                        data.map((ele,index)=>(
+                        data.map((ele)=>(
                             
                             <tr>
                               {  console.log(ele.email)}
                                 
                             <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
-                              {index+1}
+                              {firstPostIndex+1}
                             </td>
                             <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">{ele.first_name}</td>
                             <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap">
@@ -84,6 +88,7 @@ function Dashboard() {
                                 Generate
                               </a>
                             </td>
+                            {firstPostIndex++}
                           </tr> 
                         ))
                        
@@ -91,10 +96,12 @@ function Dashboard() {
                      
                     </tbody>
                   </table>
+
                 </div>
               </div>
             </div>
           </div>
+    
           </>
         );
       };

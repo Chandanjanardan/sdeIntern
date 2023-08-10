@@ -1,6 +1,6 @@
 const data=[
     {
-        "first_name": "nainu",
+        "first_name": "Chandy",
         "last_name": "wadhwa",
         "resume_name": "first one",
         "level": "internship",
