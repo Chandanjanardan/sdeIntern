@@ -15,7 +15,7 @@ function Middleware() {
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currentPosts =jsonData.slice(firstPostIndex, lastPostIndex);
     
-    console.log("data")
+    console.log(jsonData[3].first_name,"This is testing of data from array")
     console.log(currentPage)
    
   return (

@@ -1,0 +1,8 @@
+{
+  "projectName": "dashboard",
+  "meta": {
+    "type": "frontend"
+  },
+  "packageManager": "npm",
+  "hash": "a17cfc3e"
+}
