@@ -1,9 +1,10 @@
-import React from 'react'
+import {React,useEffect} from 'react'
+
 
 
 
 function Dashboard({data,firstPostIndex}) {
-    // console.log(data)
+  
   
     
     
@@ -12,14 +13,15 @@ function Dashboard({data,firstPostIndex}) {
 
     <>
    
-    
+
+   
         
           <div className="flex flex-col">
             <div className="overflow-x-auto">
               <div className="p-1.5 w-full inline-block align-middle">
                 <div className="overflow-hidden border rounded-lg">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
+                  <table className="min-w-full divide-y divide-gray-200" >
+                    <thead className="bg-gray-50 top-0 sticky">
                       <tr>
                         <th
                           scope="col"

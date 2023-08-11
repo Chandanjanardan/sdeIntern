@@ -16,6 +16,11 @@ import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
+import { CSVLink, CSVDownload } from "react-csv";
+
+import csvData from "./Json";
+
+const Data=csvData
 
 const sortOptions = [
   { name: 'Name', href: '#', current: true },
@@ -184,9 +189,13 @@ function classNames(...classes) {
                 />
             </div>
         </form>
+        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <CSVLink data={csvData}>Download all data</CSVLink>
+</button>
             
 
             <div className="flex items-center">
+                
                 
               <Menu as="div" className="relative inline-block text-left">
                 <div>
@@ -196,6 +205,7 @@ function classNames(...classes) {
                       className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
+                    
                   </Menu.Button>
                 </div>
 
